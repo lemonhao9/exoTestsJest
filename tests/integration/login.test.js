@@ -7,7 +7,7 @@ describe('POST /login', () => {
             .post('/login')
             .send({ email: 'test@example.com', password: 'password123' });
         expect(response.status).toBe(200);
-        expect(response.body.message).toEqual('User logged in successfully');
+        expect(response.body.message).toEqual('User logged in successfully !');
     });
     it('should return status code 400 and error message for invalid email or invalid password', async () => {
         const response = await request(app)
