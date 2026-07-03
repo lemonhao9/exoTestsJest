@@ -26,4 +26,4 @@ jobs:
 
     - name: launch deploy
       if: success()
-      run: curl -X POST "{{RENDER_DEPLOY_HOOK_RENDER}}"
+      run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_RENDER }}"
