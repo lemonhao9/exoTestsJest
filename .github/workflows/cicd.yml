@@ -21,9 +21,13 @@ jobs:
 
     - name: launch integration tests
       run: npm run test:integration
+
+    - name: install playwright dependencies
+      run: npx playwright install-deps
     - name: launch e2e tests
       run: npm run test:e2e
 
+      
     - name: launch deploy
       if: success()
       run: curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK_RENDER }}"
